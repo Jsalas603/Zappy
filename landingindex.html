@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/landingstyle.css" />
+</head>
+
+
+<body>
+  <div class="options">
+    <h3>Choose your calories</h3>
+    <div class="calories-options">
+        <button onclick="myFunction()" id="low-calories">Low Calories</button>
+        <button onclick="myFunction()"  id="average-calories">Avarage Calories</button>
+        <button onclick="myFunction()"  id="high-calories">High Calories</button>
+    </div>
+  </div> 
+
+  <div>
+    <h4>Vegetarian Option</h4>
+    <div class="vegeterian">
+        <button onclick="myFunction()" class="Veg-yes">Yes</button>
+        <button onclick="myFunction()" class="Veg-no">No</button>
+    </div>
+  </div> 
+
+  <div id="recipe-list-container"></div>
+  <div id="fortune-cookie"></div>
+  <div id ="show-recipe-container"></div>
+  
+  <script src="assets/js/recipe.js"></script>
+</body>
+</html>
