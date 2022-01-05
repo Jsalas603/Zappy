@@ -6,6 +6,13 @@ var lowList = document.getElementById("low-recipe-list-container");
 var averageList = document.getElementById("average-recipe-list-container")
 var highList = document.getElementById("high-recipe-list-container")
 
+var fortuneModal = document.getElementById('fortune-modal');
+var ingredientsEl = document.getElementById('ingredients');
+var instructionsEl = document.getElementById('instructions');
+
+var selectedRecipeId;
+
+
 lowCaloriesButton.onclick = function(event) {
     console.log("click")
     if (lowList.style.display == "none") {
@@ -43,9 +50,50 @@ highCaloriesButton.onclick = function(event) {
       }
 }
 
+function displayFortuneModal(recipeId) {
+    selectedRecipeId = recipeId;
+    fortuneModal.style.display = 'block';
+    getFortune().then(fortune => {
+        var fortuneMessageEl = document.getElementById('fortune-message');
+        fortuneMessageEl.textContent = fortune.data.prediction.result;
+    });
+}
+
+
+var fortuneButton = document.getElementById('fortune-button'); 
+fortuneButton.onclick= function() {
+    fortuneModal.style.display = 'none';
+    getRecipe(selectedRecipeId).then(recipe => {
+        var ingredients = recipe.sections[0].components;
+        var instructions = recipe.instructions;
+
+        while (ingredientsEl.firstChild) {
+            ingredientsEl.removeChild(ingredientsEl.firstChild);
+        }
+
+        while (instructionsEl.firstChild) {
+            instructionsEl.removeChild(instructionsEl.firstChild);
+        }
+
+        ingredients.forEach(ingredient => {
+            console.log('ingredient', ingredient.ingredient.name);
+            var ingredientEl = document.createElement('div');
+            ingredientEl.textContent = ingredient.ingredient.name;
+            ingredientsEl.append(ingredientEl)
+        });
+
+        instructions.forEach(instruction => {
+            console.log('instruction', instruction.display_text);
+            var instructionEl = document.createElement('div');
+            instructionEl.textContent = instruction.display_text;
+            instructionsEl.append(instructionEl)
+        });
+    });
+}
+
 //get instruction when click on recipe
 function getRecipe(recipeId) {
-    fetch(`https://tasty.p.rapidapi.com/recipes/detail?id=${recipeId}`, {
+    return fetch(`https://tasty.p.rapidapi.com/recipes/detail?id=${recipeId}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tasty.p.rapidapi.com",
@@ -53,8 +101,9 @@ function getRecipe(recipeId) {
         }
     })
     .then(response => {
-        response.json().then((data) => {
-            console.log(data)
+        return response.json().then((data) => {
+            console.log(data);
+            return data;
             // data.sections[0].components.forEach(({ ingredient }) => {
             //     console.log('ingredient', ingredient);
             // });
@@ -86,11 +135,11 @@ var highCalRecipes = {
     "roasted-garlic-and-herb-pork-roast" : 7963,
 }
 
-getRecipe(lowCalRecipes["one-pot-garlic-parmesan-pasta"]);
+// getRecipe(lowCalRecipes["one-pot-garlic-parmesan-pasta"]);
 
 //get fortune cookies
 function getFortune() {
-    fetch("https://fortune-cookie.p.rapidapi.com/api/1.0/get_fortune_cookie.php", {
+    return fetch("https://fortune-cookie.p.rapidapi.com/api/1.0/get_fortune_cookie.php", {
         "method": "POST",
         "headers": {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -101,12 +150,13 @@ function getFortune() {
     })
     .then(response => {
         console.log('response', response)
-        response.json().then((data) => {
+        return response.json().then((data) => {
             console.log('fortune', data);
+            return data;
         });
     })
     .catch(err => {
         console.error(err);
     });
 }
-getFortune();
+// getFortune();
