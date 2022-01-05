@@ -75,10 +75,10 @@ fortuneButton.onclick= function() {
             instructionsEl.removeChild(instructionsEl.firstChild);
         }
 
-        ingredients.forEach(ingredient => {
-            console.log('ingredient', ingredient.ingredient.name);
+        ingredients.forEach(measurements => {
+            console.log('ingredient', measurements.raw_text);
             var ingredientEl = document.createElement('div');
-            ingredientEl.textContent = ingredient.ingredient.name;
+            ingredientEl.textContent =measurements.raw_text;
             ingredientsEl.append(ingredientEl)
         });
 
