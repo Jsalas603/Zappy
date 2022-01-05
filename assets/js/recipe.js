@@ -9,10 +9,9 @@ function getRecipe(recipeId) {
     .then(response => {
         response.json().then((data) => {
             console.log(data)
-            data.sections[0].components.forEach(({ ingredient }) => {
-                console.log('ingredient', ingredient);
-        
-            });
+            // data.sections[0].components.forEach(({ ingredient }) => {
+            //     console.log('ingredient', ingredient);
+            // });
         })
     })
     .catch(err => {
@@ -21,12 +20,27 @@ function getRecipe(recipeId) {
 }
 
 
-var lowCalories = {
+var lowCalRecipes = {
     "chicken-stir-fry": 7214,
-    "avocado-quinoa-power-salad": 3932
+    "avocado-quinoa-power-salad": 3932,
+    "one-pot-garlic-parmesan-pasta": 2932,
+    "lemon-chicken-and-asparagus-stir-fry":534,
 }
 
-getRecipe(lowCalories["chicken-stir-fry"]);
+var averageCalRecipes = {
+    "classic-baked-mac-and-cheese": 8031,
+    "enchilada-inspired-stuffed-shells": 2046,
+    "Devil-curry": 7997,
+    "cauliflowe-walnut-burritos": 4743,
+}
+
+var highCalRecipes = {
+    "french-pepper-steak": 2862,
+    "country-fried-steak-and-gravy": 5157,
+    "roasted-garlic-and-herb-pork-roast" : 7963,
+}
+
+getRecipe(lowCalRecipes["avocado-quinoa-power-salad"]);
 
 function getFortune() {
     fetch("https://fortune-cookie.p.rapidapi.com/api/1.0/get_fortune_cookie.php", {
