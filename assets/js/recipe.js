@@ -1,3 +1,49 @@
+
+//show recipes when choose calories
+var lowCaloriesButton =document.getElementById('low-calories');
+
+var lowList = document.getElementById("low-recipe-list-container");
+var averageList = document.getElementById("average-recipe-list-container")
+var highList = document.getElementById("high-recipe-list-container")
+
+lowCaloriesButton.onclick = function(event) {
+    console.log("click")
+    if (lowList.style.display == "none") {
+        lowList.style.display = "block";
+        averageList.style.display = 'none';
+        highList.style.display = 'none';
+    } else {
+        lowList.style.display = "none";
+    }
+}
+
+var averageCaloriesButton =document.getElementById('average-calories');
+averageCaloriesButton.onclick = function(event) {
+    console.log("click")
+    
+    if (averageList.style.display === "none") {
+        averageList.style.display = "block";
+        lowList.style.display = 'none';
+        highList.style.display = 'none';
+      } else {
+        averageList.style.display = "none";
+      }
+}
+
+var highCaloriesButton =document.getElementById('high-calories');
+highCaloriesButton.onclick = function(event) {
+    console.log("click")
+    
+    if (highList.style.display === "none") {
+        highList.style.display = "block";
+        averageList.style.display = 'none';
+        lowList.style.display = 'none';
+      } else {
+        highList.style.display = "none";
+      }
+}
+
+//get instruction when click on recipe
 function getRecipe(recipeId) {
     fetch(`https://tasty.p.rapidapi.com/recipes/detail?id=${recipeId}`, {
         "method": "GET",
@@ -19,7 +65,7 @@ function getRecipe(recipeId) {
     }); 
 }
 
-
+//recipes for each calorie category
 var lowCalRecipes = {
     "chicken-stir-fry": 7214,
     "avocado-quinoa-power-salad": 3932,
@@ -40,8 +86,9 @@ var highCalRecipes = {
     "roasted-garlic-and-herb-pork-roast" : 7963,
 }
 
-getRecipe(lowCalRecipes["avocado-quinoa-power-salad"]);
+getRecipe(lowCalRecipes["one-pot-garlic-parmesan-pasta"]);
 
+//get fortune cookies
 function getFortune() {
     fetch("https://fortune-cookie.p.rapidapi.com/api/1.0/get_fortune_cookie.php", {
         "method": "POST",
