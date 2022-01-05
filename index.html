@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <form class="form" id="login">
+        <form class="form form-hidden" id="login">
             <h1 class="form-title">Login</h1>
             <div class="form-message form-message-error"></div>
             <div class="form-input-group">
@@ -28,6 +28,30 @@
             </p>
             <p class='form-text'>
                 <a class="form-link" href="./" id="linkCreateAccount" class="form-link">Don't have an account? Create account</a>
+            </p>
+        </form>
+        <form class="form form" id="createAccount">
+            <h1 class="form-title">Create Account</h1>
+            <div class="form-message form-message-error"></div>
+            <div class="form-input-group">
+                <input type="text" class="form-input" autofocus placeholder="Username">
+                <div class="form-input-error-message"></div>
+            </div>
+            <div class="form-input-group">
+                <input type="text" class="form-input" autofocus placeholder="Email Address">
+                <div class="form-input-error-message"></div>
+            </div>
+            <div class="form-input-group">
+                <input type="password" class="form-input" autofocus placeholder="Password">
+                <div class="form-input-error"></div>
+            </div>
+            <div class="form-input-group">
+                <input type="password" class="form-input" autofocus placeholder="Confirm Password">
+                <div class="form-input-error"></div>
+            </div>
+            <button class='form-button' type="submit">Let's feast!</button>
+            <p class='form-text'>
+                <a class="form-link" href="./" id="linkLogin" class="form-link">Already have an account? Sign in</a>
             </p>
         </form>
     </div>

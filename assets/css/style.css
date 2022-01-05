@@ -33,6 +33,10 @@ body {
     font-family: 500 1 rem "Helvetica", "Verdana", sans-serif;
 }
 
+.form-hidden {
+    display: none;
+}
+
 .form > *:first-child {
     margin-top: 0;
 }
