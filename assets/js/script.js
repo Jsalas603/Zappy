@@ -1,26 +1,34 @@
-var getProducts = function(products) {
-    var priceApiUrl =`https://api.kroger.com/v1/products?filter.term=${TERM}&filter.filter.zipCode.near=75082`;
-    fetch(priceApiUrl).then(function(response) {
-        console.log ("products");
-    })
-};
+function setFormMessage(formEl, type, message) {
+    var messageEl = formEl.querySelector(".form-message");
 
-getProducts();
+    messageEl.textContent = message;
+    messageEl.classList.remove("form-message-sucess", "form-message-error");
+    messageEl.classList.add('form-message--${type}');
+}
 
-var axios = require("axios").default;
+setFormMessage(loginForm, "success", "You're loggen in!");
 
-var options = {
-  method: 'GET',
-  url: 'https://tasty.p.rapidapi.com/recipes/list',
-  params: {from: '0', size: '20', tags: 'under_30_minutes'},
-  headers: {
-    'x-rapidapi-host': 'tasty.p.rapidapi.com',
-    'x-rapidapi-key': '152c498cf3msh0f5746cfa2f4dcfp1e760cjsn3620d249e86f'
-  }
-};
+document.addEventListener("DOMContentLoaded", () => {
+    var loginForm = document.querySelector("#login");
+    var createAccountForm = document.querySelector("#createAccount");
 
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
+    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form-hidden");
+        createAccountForm.classList.remove("form-hidden");
+    });
+
+    document.querySelector("#linkLogin").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.remove("form-hidden");
+        createAccountForm.classList.add("form-hidden");
+    });
+
+    loginForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        // Perform Fetch login
+
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+    });
 });
