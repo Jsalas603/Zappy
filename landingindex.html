@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="assets/css/landingstyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/recipe.css" />
 </head>
 
 
 <body>
-  <div class="options">
-    <h3>Choose your calories</h3>
-    <div class="calories-options">
-        <button onclick="myFunction()" id="low-calories">Low Calories</button>
-        <button onclick="myFunction()"  id="average-calories">Avarage Calories</button>
-        <button onclick="myFunction()"  id="high-calories">High Calories</button>
+    <div class="options">
+        <h3>Choose your calories</h3>
+        <div class="calories-options">
+            <button onclick="myFunction()" id="low-calories">Low Calories</button>
+            <button onclick="myFunction()" id="average-calories">Average Calories</button>
+            <button onclick="myFunction()" id="high-calories">High Calories</button>
+        </div>
     </div>
-  </div> 
 
-  <div>
-    <h4>Vegetarian Option</h4>
-    <div class="vegeterian">
-        <button onclick="myFunction()" class="Veg-yes">Yes</button>
-        <button onclick="myFunction()" class="Veg-no">No</button>
+    <div>
+        <h4>Vegetarian Option</h4>
+        <div class="vegeterian">
+            <button class="Veg-yes">Yes</button>
+            <button class="Veg-no">No</button>
+        </div>
     </div>
-  </div> 
+    <div class="container">
+        <div id="low-recipe-list-container" style="display: none;">
+            <h3> Low Calories Recipes</h3>
+            <ul>
+                <li onclick="getRecipe(7214)">chicken stir fry</li>
+                <li onclick="getRecipe(3932)">avocado quinoa power salad</li>
+                <li onclick="getRecipe(2932)">one pot garlic parmesan pasta</li>
+                <li onclick="getRecipe(534)">lemon chicken and asparagus stir fry</li>
+            </ul>
+        </div>
+        <div id="average-recipe-list-container" style="display: none;">
+            <h3> Average Calories Recipes</h3>
+            <ul >
+                <li onclick="getRecipe(8031)">classic-baked-mac-and-cheese</li>
+                <li onclick="getRecipe(2046)">enchilada-inspired-stuffed-shells</li>
+                <li onclick="getRecipe(7997)">Devil-curry</li>
+                <li onclick="getRecipe(4743)">cauliflowe-walnut-burritos</li>
+            </ul>
+        </div>
+        <div id="high-recipe-list-container" style="display: none;">
+            <h3> High Calories Recipes</h3>
+            <ul >
+                <li onclick="getRecipe(2862)">french-pepper-steak</li>
+                <li onclick="getRecipe(5157)">country-fried-steak-and-gravy</li>
+                <li onclick="getRecipe(7963)">roasted-garlic-and-herb-pork-roast</li>
+            </ul>
+        </div>
+    </div>
 
-  <div id="recipe-list-container"></div>
-  <div id="fortune-cookie"></div>
-  <div id ="show-recipe-container"></div>
-  
-  <script src="assets/js/recipe.js"></script>
+    <div id="fortune-cookie"></div>
+    <div id="show-recipe-container"></div>
+
+    <script src="assets/js/recipe.js"></script>
 </body>
+
 </html>
