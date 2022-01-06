@@ -19,6 +19,10 @@ Application will provide user with food options based on calorie selection
 
 [Zappy Documentation](https://github.com/Jsalas603/Zappy/blob/main/assets/docs/zappy_documentation.md)
 
+## Website URL
+
+[Zappy](https://jsalas603.github.io/Zappy/)
+
 ## Contributions
 
 [RC Schornick]()
