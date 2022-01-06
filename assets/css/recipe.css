@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     --color-primary: #009579;
     --color-primary-dark: #007f67;
@@ -50,8 +53,8 @@ body {
 }
 #low-recipe-list-container{
     display: none;
-    width: 400px;
-    max-width: 400px;
+    width: 400px; 
+     max-width: auto; 
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -66,8 +69,8 @@ body {
 }
 #average-recipe-list-container{
     display: none;
-    width: 400px;
-    max-width: 400px;
+    width: 400px; 
+    max-width: auto;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -83,7 +86,7 @@ body {
 #high-recipe-list-container{
     display: none;
     width: 400px;
-    max-width: 400px;
+    max-width: auto;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -97,12 +100,18 @@ body {
     font-size: 35px
 }
 #show-recipe-container{
-    display: none;
-    width: 400px;
-    max-width: 400px;
+    /* display: block; */
+    /* width: 400px; */
+    display: left;
+    max-width: auto;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     background: #ffffff;
     border-radius: 8%;
+}
+
+.text {
+    font-family: "Times New Roman", Times, serif;
+    font-size:30px;
 }

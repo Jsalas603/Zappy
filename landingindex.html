@@ -10,8 +10,8 @@
 </head>
 
 
-<body class="grid grid-cols-2 gap-4">
-    <div class="options">
+<body class="grid-cols-2 ">
+    <div class="options flex-wrap">
         <h1 class="options-title">Calorie Options</h1>        
         <div class="calories-options">
             <button onclick="myFunction()" id="low-calories">Low</button>
@@ -29,7 +29,7 @@
     </div>
 
     
-    <div class="container">
+    <div class="container flex-wrap">
         <div id="low-recipe-list-container" style="display: none;">
             <h3 class="low-recipe-list-title">Low Calorie Recipes</h3>
             <ul>
@@ -57,8 +57,10 @@
             </ul>
         </div>
         <div id="show-recipe-container">
-            <div id="ingredients"></div>
-            <div id="instructions"></div>
+            <div id="ingredients">
+            </div>
+            <div id="instructions">
+            </div>
         </div>
     </div>
 

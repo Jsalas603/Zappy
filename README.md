@@ -1,17 +1,19 @@
 # Zappy
 
-Application will provide user with food options based on diet and budget selection
+Application will provide user with food options based on calorie selection
 
 ## Built With
 
 * HTMl
 * CSS
 * JavaScript
+* JQuery
+* Tailwindcss
 
 ## APIs Used
 
 * Tasty Recipe API
-* Kroger API
+* Fortune Cookie API
 
 ## Documentation
 
