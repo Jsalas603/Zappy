@@ -6,7 +6,10 @@ function setFormMessage(formEl, type, message) {
     messageEl.classList.add('form-message--${type}');
 }
 
-setFormMessage(loginForm, "success", "You're loggen in!");
+function setInputError(inoutEl, message) {
+    inputElement.classList.add("form-input-error");
+    inputElement.parentEl.querySelector(".form-input-error-message").textContent = message;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     var loginForm = document.querySelector("#login");
@@ -31,5 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
+
+    document.querySelectorAll(".form-input").forEach(inputElement => {
+        inputElement.addEventListener("blur" , e => {
+            if (e.target.id === "signupUsername" && e.target.value.length)
+    });
+});
 });
 
+ 
