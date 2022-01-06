@@ -22,7 +22,7 @@ body {
 }
 .options {
     width: 400px;
-    max-width: 400px;
+    max-width: auto;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -114,4 +114,9 @@ body {
 .text {
     font-family: "Times New Roman", Times, serif;
     font-size:30px;
+}
+
+.cook-text{
+    font-family: "Times New Roman", Times, serif;
+    font-size:40px;
 }
