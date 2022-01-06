@@ -21,7 +21,10 @@ Application will provide user with food options based on calorie selection
 
 ## Contributions
 
-[RC Schornick]()
+[RC Schornick](https://github.com/RCSchornick)
+
 [Jasson Salas](https://github.com/Jsalas603)
+
 [Tracy Tran](https://github.com/tracytran1189)
+
 [Jorge A Salinas Jr](https://github.com/jsalinas212)
