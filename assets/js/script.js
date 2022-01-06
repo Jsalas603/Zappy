@@ -32,4 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 });
->>>>>>> 692d4bd7a32115b99ab1c2dd95d39932f9acb96e
+
+// Fetch from Tasty API
+
+fetch("https://tasty.p.rapidapi.com/tags/list", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "tasty.p.rapidapi.com",
+		"x-rapidapi-key": "2ce3aceaafmsh735dd48b8aa1b5fp14cc1bjsne82d5623efde"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
