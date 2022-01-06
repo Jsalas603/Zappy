@@ -75,12 +75,23 @@ fortuneButton.onclick= function() {
             instructionsEl.removeChild(instructionsEl.firstChild);
         }
 
+        var ingredientText = document.createElement('h3');
+        ingredientText.classList.add("text");
+        ingredientText.textContent= "Ingredients: ";
+        ingredientsEl.append(ingredientText)
+
+
         ingredients.forEach(measurements => {
             console.log('ingredient', measurements.raw_text);
             var ingredientEl = document.createElement('div');
-            ingredientEl.textContent =measurements.raw_text;
+            ingredientEl.textContent = measurements.raw_text;
             ingredientsEl.append(ingredientEl)
         });
+
+        var instructionText = document.createElement('h3');
+        instructionText.classList.add("text");
+        instructionText.textContent= "Instructions: ";
+        instructionsEl.append(instructionText)
 
         instructions.forEach(instruction => {
             console.log('instruction', instruction.display_text);

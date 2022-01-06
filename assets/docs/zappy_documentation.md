@@ -4,13 +4,13 @@
 
 -----------------------------------
 
-Front end will consist of a login page and a landing page where users can select from budget, calorie, and vegan options to display recipes.
+Front end will consist of a login page and a landing page where users can select from calorie options to display recipes. Budget and Vegetarian option will be added in future improvements.  
 
 ![Mock-up Image 1](../images/login_page.png)
 
 ![Mock-up Image 2](../images/recipes_page.png)
 
-After making a selection from the previously mentioned choices, the user will see a list of 3 recipe options determined by their criteria.
+After making a selection from the previously mentioned choices, the user will see a list of recipe options determined by their criteria.
 
 ![Mock-up Image 3](../images/zappy-mockup.png)
 
@@ -26,12 +26,12 @@ Tasty API will be used to find the recipes.
 
 - [Tasty - Recipe API](https://rapidapi.com/apidojo/api/tasty/)
 
-Kroger API will be used to find pricing and determine budget friendly dishes.
+Fortune Cookie API will be used to show a fortune messgage when you choose a recipe.
 
-- [Kroger - Ingredient API](https://developer.kroger.com/reference/)
+- [Fortune Cookie API](https://rapidapi.com/divineapi/api/fortune-cookie/)
 
 ### Application Logic
 
 Login page will store username in local storage to determine that user is logged in. If username exists in local storage, user cannot access the login page again.
 
-After logging in, user will be redirected to main landing page where they can make a selection. Selection will determine which 3 recipes are displayed. After clicking on a recipe, the page will slide down to show the full detail and process of making the dish.
+After logging in, user will be redirected to main landing page where they can make a selection. Selection will determine which recipes are displayed. After clicking on a recipe, the page will show a fortune message then continue to show the full detail and process of making the dish.
