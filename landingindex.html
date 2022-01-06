@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="./assets/css/recipe.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Zappy</title>
 </head>
 
 
 <body class="grid grid-cols-2 gap-4">
     <div class="options">
-        <h3>Choose your calories</h3>
+        <h1 class="options-title">Calorie Options</h1>        
         <div class="calories-options">
-            <button onclick="myFunction()" id="low-calories">Low Calories</button>
-            <button onclick="myFunction()" id="average-calories">Average Calories</button>
-            <button onclick="myFunction()" id="high-calories">High Calories</button>
+            <button onclick="myFunction()" id="low-calories">Low</button>
+            <button onclick="myFunction()" id="average-calories">Average</button>
+            <button onclick="myFunction()" id="high-calories">High</button>
         </div>
 
         <div>
-            <h4>Vegetarian Option</h4>
+            <h4 class="vegeterian-options-title">Vegeterian Option</h4>  
             <div class="vegeterian">
                 <button class="Veg-yes">Yes</button>
                 <button class="Veg-no">No</button>
@@ -30,29 +31,29 @@
     
     <div class="container">
         <div id="low-recipe-list-container" style="display: none;">
-            <h3> Low Calories Recipes</h3>
+            <h3> Low Calorie Recipes</h3>
             <ul>
-                <li onclick="displayFortuneModal(7214)">chicken stir fry</li>
-                <li onclick="displayFortuneModal(3932)">avocado quinoa power salad</li>
-                <li onclick="displayFortuneModal(2932)">one pot garlic parmesan pasta</li>
-                <li onclick="displayFortuneModal(534)">lemon chicken and asparagus stir fry</li>
+                <li onclick="displayFortuneModal(7214)">Chicken Stir Fry</li>
+                <li onclick="displayFortuneModal(3932)">Avocado Quinoa Power Salad</li>
+                <li onclick="displayFortuneModal(2932)">One Pot Garlic Parmesan Pasta</li>
+                <li onclick="displayFortuneModal(534)">Lemon Chicken and Asparagus Stir Fry</li>
             </ul>
         </div>
         <div id="average-recipe-list-container" style="display: none;">
-            <h3> Average Calories Recipes</h3>
+            <h3> Average Calorie Recipes</h3>
             <ul >
-                <li onclick="displayFortuneModal(8031)">classic-baked-mac-and-cheese</li>
-                <li onclick="displayFortuneModal(2046)">enchilada-inspired-stuffed-shells</li>
-                <li onclick="displayFortuneModal(7997)">Devil-curry</li>
-                <li onclick="displayFortuneModal(4743)">cauliflowe-walnut-burritos</li>
+                <li onclick="displayFortuneModal(8031)">Classic-Baked-Mac-and-Cheese</li>
+                <li onclick="displayFortuneModal(2046)">Enchilada-Inspired-Stuffed-Shells</li>
+                <li onclick="displayFortuneModal(7997)">Devil-Curry</li>
+                <li onclick="displayFortuneModal(4743)">Cauliflower-Walnut-Burritos</li>
             </ul>
         </div>
         <div id="high-recipe-list-container" style="display: none;">
-            <h3> High Calories Recipes</h3>
+            <h3> High Calorie Recipes</h3>
             <ul >
-                <li onclick="displayFortuneModal(2862)">french-pepper-steak</li>
-                <li onclick="displayFortuneModal(5157)">country-fried-steak-and-gravy</li>
-                <li onclick="displayFortuneModal(7963)">roasted-garlic-and-herb-pork-roast</li>
+                <li onclick="displayFortuneModal(2862)">French-Pepper-Steak</li>
+                <li onclick="displayFortuneModal(5157)">Country-Fried-Steak-and-Gravy</li>
+                <li onclick="displayFortuneModal(7963)">Roasted-Garlic-and-Herb-Pork-Roast</li>
             </ul>
         </div>
         <div id="show-recipe-container">
