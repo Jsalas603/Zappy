@@ -1,9 +1,35 @@
-// Login Page Logic
-// User signs in, username is stored in local storage
-// Logged in user cannot return to login page
+function setFormMessage(formEl, type, message) {
+    var messageEl = formEl.querySelector(".form-message");
 
-// Landing Page Logic
-// User selects budget, calories, and vegan options
+    messageEl.textContent = message;
+    messageEl.classList.remove("form-message-sucess", "form-message-error");
+    messageEl.classList.add('form-message--${type}');
+}
 
-// Tasty API is queried for recipes
-// Kroger API is queried for ingredient pricing
+setFormMessage(loginForm, "success", "You're loggen in!");
+
+document.addEventListener("DOMContentLoaded", () => {
+    var loginForm = document.querySelector("#login");
+    var createAccountForm = document.querySelector("#createAccount");
+
+    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form-hidden");
+        createAccountForm.classList.remove("form-hidden");
+    });
+
+    document.querySelector("#linkLogin").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.remove("form-hidden");
+        createAccountForm.classList.add("form-hidden");
+    });
+
+    loginForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        // Perform Fetch login
+
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+    });
+});
+>>>>>>> 692d4bd7a32115b99ab1c2dd95d39932f9acb96e

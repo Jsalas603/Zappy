@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/recipe.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Zappy</title>
+</head>
+
+
+<body class="grid-cols-2 ">
+    <div class="options flex-wrap">
+        <h1 class="options-title">Calorie Options</h1>        
+        <div class="calories-options">
+            <button onclick="myFunction()" id="low-calories">Low</button>
+            <button onclick="myFunction()" id="average-calories">Average</button>
+            <button onclick="myFunction()" id="high-calories">High</button>
+        </div>
+
+        <div>
+            <h4 class="vegeterian-options-title">Vegeterian Option</h4>  
+            <div class="vegeterian">
+                <button class="Veg-yes">Yes</button>
+                <button class="Veg-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container flex-wrap">
+        <div id="low-recipe-list-container" style="display: none;">
+            <h3 class="low-recipe-list-title">Low Calorie Recipes</h3>
+            <ul>
+                <li onclick="displayFortuneModal(7214)">Chicken Stir Fry</li>
+                <li onclick="displayFortuneModal(3932)">Avocado Quinoa Power Salad</li>
+                <li onclick="displayFortuneModal(2932)">One Pot Garlic Parmesan Pasta</li>
+                <li onclick="displayFortuneModal(534)">Lemon Chicken and Asparagus Stir Fry</li>
+            </ul>
+        </div>
+        <div id="average-recipe-list-container" style="display: none;">
+            <h3 class="average-recipe-list-title">Average Calorie Recipes</h3>
+            <ul >
+                <li onclick="displayFortuneModal(8031)">Classic-Baked-Mac-and-Cheese</li>
+                <li onclick="displayFortuneModal(2046)">Enchilada-Inspired-Stuffed-Shells</li>
+                <li onclick="displayFortuneModal(7997)">Devil-Curry</li>
+                <li onclick="displayFortuneModal(4743)">Cauliflower-Walnut-Burritos</li>
+            </ul>
+        </div>
+        <div id="high-recipe-list-container" style="display: none;">
+            <h3 class="high-recipe-list-title">High Calorie Recipes</h3>
+            <ul >
+                <li onclick="displayFortuneModal(2862)">French-Pepper-Steak</li>
+                <li onclick="displayFortuneModal(5157)">Country-Fried-Steak-and-Gravy</li>
+                <li onclick="displayFortuneModal(7963)">Roasted-Garlic-and-Herb-Pork-Roast</li>
+            </ul>
+        </div>
+        <div id="show-recipe-container">
+            <div id="ingredients">
+            </div>
+            <div id="instructions">
+            </div>
+        </div>
+    </div>
+
+    <div id="fortune-cookie">
+       
+        <div id ="fortune-modal" style="display: none;"class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+           
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        
+           
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <!-- Heroicon name: outline/exclamation -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                       Here is your fortune!
+                    </h3>
+                    <div id="messge" class="mt-2">
+                        <p id="fortune-message" class="text-sm text-gray-500">
+                       
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button id ="fortune-button" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                   Continue to your recipe :)
+                </button>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
+    </div>
+   
+
+    <script src="assets/js/recipe.js"></script>
+</body>
+
+</html>
