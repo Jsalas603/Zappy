@@ -1,12 +1,18 @@
+var redirectLandingPage = function() {
+    window.location = "./landingindex.html";
+};
+
 function setFormMessage(formEl, type, message) {
     var messageEl = formEl.querySelector(".form-message");
 
     messageEl.textContent = message;
     messageEl.classList.remove("form-message-sucess", "form-message-error");
-    messageEl.classList.add('form-message--${type}');
-}
+    messageEl.classList.add('form-message--${type}'); 
 
-setFormMessage(loginForm, "success", "You're loggen in!");
+    if (localStorage.getItem("userName")) {
+        redirectLandingPage();
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     var loginForm = document.querySelector("#login");
@@ -28,8 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         // Perform Fetch login
+        var userName = document.querySelector("input[name='username']").value;
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        // Set username in localstorage
+        localStorage.setItem("userName", userName);
+
+        if (localStorage.getItem("userName")) {
+            setFormMessage(loginForm, "success", "You have successfully logged in!");
+        } else {
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
+        }
     });
 });
->>>>>>> 692d4bd7a32115b99ab1c2dd95d39932f9acb96e

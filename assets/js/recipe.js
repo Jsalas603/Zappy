@@ -12,6 +12,10 @@ var instructionsEl = document.getElementById('instructions');
 
 var selectedRecipeId;
 
+var showUserName = function() {
+    var userName = localStorage.getItem("userName");
+    document.querySelector(".cook-text").textContent = "Let's cook, " + userName + "!";
+}
 
 lowCaloriesButton.onclick = function(event) {
     console.log("click")
@@ -171,3 +175,5 @@ function getFortune() {
     });
 }
 // getFortune();
+
+showUserName();
