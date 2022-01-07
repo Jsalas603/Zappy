@@ -2,6 +2,10 @@
 
 Application will provide user with food options based on calorie selection
 
+![Zappy Login Page](./assets/images/zappy_screenshot01.png)
+
+![Zappy Recipes](./assets/images/zappy_screenshot02.png)
+
 ## Built With
 
 * HTMl
