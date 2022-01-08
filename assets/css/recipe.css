@@ -16,7 +16,7 @@ body {
 }
 .options {
     text-align: center;
-    width: 400px;
+    width: 350px;
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -48,7 +48,7 @@ body {
 }
 #low-recipe-list-container{
     display: none;
-    width: 400px; 
+    width: 350px; 
      max-width: auto; 
     margin: 1rem;
     padding: 2rem;
@@ -64,7 +64,7 @@ body {
 }
 #average-recipe-list-container{
     display: none;
-    width: 400px; 
+    width: 350px; 
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -80,7 +80,7 @@ body {
 }
 #high-recipe-list-container{
     display: none;
-    width: 400px;
+    width: 350px;
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -96,7 +96,7 @@ body {
 }
 #show-recipe-container{
     /* display: block; */
-    width: 400px;
+    width:350px;
     display: left;
     max-width: auto;
     margin: 1rem;
