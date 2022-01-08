@@ -112,7 +112,8 @@ function getRecipe(recipeId) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tasty.p.rapidapi.com",
-            "x-rapidapi-key": "2ce3aceaafmsh735dd48b8aa1b5fp14cc1bjsne82d5623efde"
+            "x-rapidapi-key": "152c498cf3msh0f5746cfa2f4dcfp1e760cjsn3620d249e86f"
+           // "x-rapidapi-key": "2ce3aceaafmsh735dd48b8aa1b5fp14cc1bjsne82d5623efde"
         }
     })
     .then(response => {
