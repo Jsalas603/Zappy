@@ -48,7 +48,7 @@ body {
 }
 #low-recipe-list-container{
     display: none;
-    width: 350px; 
+    width: 400px; 
      max-width: auto; 
     margin: 1rem;
     padding: 2rem;
@@ -64,7 +64,7 @@ body {
 }
 #average-recipe-list-container{
     display: none;
-    width: 350px; 
+    width: 400px; 
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -80,7 +80,7 @@ body {
 }
 #high-recipe-list-container{
     display: none;
-    width: 350px;
+    width: 400px;
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -96,9 +96,9 @@ body {
 }
 #show-recipe-container{
     /* display: block; */
-    width:350px;
-    display: left;
-    max-width: auto;
+    /* width:350px; */
+    /* display: left; */
+    max-width: 100%;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -114,10 +114,4 @@ body {
 .cook-text{
     font-family: "Times New Roman", Times, serif;
     font-size:40px;
-}
-@media screen and (max-width:360px) {
-    .column{
-        display:flex;
-        flex-direction: column;
-    }
 }
