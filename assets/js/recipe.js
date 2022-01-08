@@ -127,21 +127,21 @@ function getRecipe(recipeId) {
 
 //recipes for each calorie category
 var lowCalRecipes = {
-    "chicken stir fry": 7214,
-    "avocado quinoa power salad": 3932,
+    "chicken-stir-fry": 7214,
+    "avocado-quinoa-power-salad": 3932,
     "one-pot-garlic-parmesan-pasta": 2932,
     "lemon-chicken-and-asparagus-stir-fry":534,
 }
 
 var averageCalRecipes = {
-    "classic baked mac and cheese": 8031,
+    "classic-baked-mac-and-cheese": 8031,
     "enchilada-inspired-stuffed-shells": 2046,
     "Devil-curry": 7997,
     "cauliflowe-walnut-burritos": 4743,
 }
 
 var highCalRecipes = {
-    "french pepper steak": 2862,
+    "french-pepper-steak": 2862,
     "country-fried-steak-and-gravy": 5157,
     "roasted-garlic-and-herb-pork-roast" : 7963,
 }
