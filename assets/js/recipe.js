@@ -9,6 +9,7 @@ var highList = document.getElementById("high-recipe-list-container")
 var fortuneModal = document.getElementById('fortune-modal');
 var ingredientsEl = document.getElementById('ingredients');
 var instructionsEl = document.getElementById('instructions');
+var recipeImageEl = document.getElementById('recipe-image');
 
 var selectedRecipeId;
 
@@ -68,9 +69,13 @@ var fortuneButton = document.getElementById('fortune-button');
 fortuneButton.onclick= function() {
     fortuneModal.style.display = 'none';
     getRecipe(selectedRecipeId).then(recipe => {
+        var recipeImages = recipe.thumbnail_url;
         var ingredients = recipe.sections[0].components;
         var instructions = recipe.instructions;
 
+        while (recipeImageEl.firstChild) {
+            recipeImageEl.removeChild(recipeImageEl.firstChild);
+        }
         while (ingredientsEl.firstChild) {
             ingredientsEl.removeChild(ingredientsEl.firstChild);
         }
@@ -78,6 +83,11 @@ fortuneButton.onclick= function() {
         while (instructionsEl.firstChild) {
             instructionsEl.removeChild(instructionsEl.firstChild);
         }
+
+        var recipeImage = document.createElement('img');
+        recipeImage.src = recipeImages;
+        recipeImageEl.append(recipeImage) 
+        console.log (recipeImageEl);
 
         var ingredientText = document.createElement('h3');
         ingredientText.classList.add("text");
