@@ -1,12 +1,28 @@
+var redirectLandingPage = function () {
+    window.location = "./landingindex.html";
+};
+
 function setFormMessage(formEl, type, message) {
     var messageEl = formEl.querySelector(".form-message");
 
     messageEl.textContent = message;
     messageEl.classList.remove("form-message-sucess", "form-message-error");
     messageEl.classList.add('form-message--${type}');
+
+    if (localStorage.getItem("userName")) {
+        redirectLandingPage();
+    }
 }
 
-setFormMessage(loginForm, "success", "You're loggen in!");
+function setInputError(inputEl, message) {
+    inputEl.classList.add("form-input-error");
+    inputEl.parentElement.querySelector(".form-input-error-message").textContent = message;
+}
+
+function clearInputError(inputElement) {
+    inputElement.classList.remove("form-input-error");
+    inputElement.parentElement.querySelector(".form-input-error-message").textContent = "";
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     var loginForm = document.querySelector("#login");
@@ -28,8 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         // Perform Fetch login
+        var userName = document.querySelector("input[name='username']").value;
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        // Set username in localstorage
+        localStorage.setItem("userName", userName);
+
+        if (localStorage.getItem("userName")) {
+            setFormMessage(loginForm, "success", "You have successfully logged in!");
+        } else {
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
+        }
+    });
+
+    document.querySelectorAll(".form-input").forEach(inputElement => {
+        inputElement.addEventListener("blur", e => {
+            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 2) {
+                setInputError(inputElement, "Username must be at least 2 characters");
+            }
+        });
+
+        inputElement.addEventListener("input", e => {
+            clearInputError(inputElement);
+        });
     });
 });
->>>>>>> 692d4bd7a32115b99ab1c2dd95d39932f9acb96e

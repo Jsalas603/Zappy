@@ -2,12 +2,6 @@
     box-sizing: border-box;
 }
 body {
-    --color-primary: #009579;
-    --color-primary-dark: #007f67;
-    --color-secondary: #252c6a;
-    --color-error: #cc3333;
-    --color-success: #4bb544;
-    --border-radius: 4px;
 
     margin: 0;
     height: 100vh;
@@ -21,7 +15,8 @@ body {
 
 }
 .options {
-    width: 400px;
+    text-align: center;
+    width: 350px;
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -53,7 +48,7 @@ body {
 }
 #low-recipe-list-container{
     display: none;
-    width: 400px; 
+    width: 350px; 
      max-width: auto; 
     margin: 1rem;
     padding: 2rem;
@@ -69,7 +64,7 @@ body {
 }
 #average-recipe-list-container{
     display: none;
-    width: 400px; 
+    width: 350px; 
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -85,7 +80,7 @@ body {
 }
 #high-recipe-list-container{
     display: none;
-    width: 400px;
+    width: 350px;
     max-width: auto;
     margin: 1rem;
     padding: 2rem;
@@ -101,7 +96,7 @@ body {
 }
 #show-recipe-container{
     /* display: block; */
-    /* width: 400px; */
+    width:350px;
     display: left;
     max-width: auto;
     margin: 1rem;
@@ -119,4 +114,10 @@ body {
 .cook-text{
     font-family: "Times New Roman", Times, serif;
     font-size:40px;
+}
+@media screen and (max-width:360px) {
+    .column{
+        display:flex;
+        flex-direction: column;
+    }
 }
