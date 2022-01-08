@@ -129,3 +129,8 @@ body {
     text-decoration: underline;
 }
 
+.form > *:first-child {
+    width: 95%;
+}
+
+

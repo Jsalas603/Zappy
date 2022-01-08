@@ -12,6 +12,10 @@ var instructionsEl = document.getElementById('instructions');
 
 var selectedRecipeId;
 
+var showUserName = function() {
+    var userName = localStorage.getItem("userName");
+    document.querySelector(".cook-text").textContent = "Let's cook, " + userName + "!";
+}
 
 lowCaloriesButton.onclick = function(event) {
     console.log("click")
@@ -75,12 +79,23 @@ fortuneButton.onclick= function() {
             instructionsEl.removeChild(instructionsEl.firstChild);
         }
 
+        var ingredientText = document.createElement('h3');
+        ingredientText.classList.add("text");
+        ingredientText.textContent= "Ingredients: ";
+        ingredientsEl.append(ingredientText)
+
+
         ingredients.forEach(measurements => {
             console.log('ingredient', measurements.raw_text);
             var ingredientEl = document.createElement('div');
-            ingredientEl.textContent =measurements.raw_text;
+            ingredientEl.textContent = measurements.raw_text;
             ingredientsEl.append(ingredientEl)
         });
+
+        var instructionText = document.createElement('h3');
+        instructionText.classList.add("text");
+        instructionText.textContent= "Instructions: ";
+        instructionsEl.append(instructionText)
 
         instructions.forEach(instruction => {
             console.log('instruction', instruction.display_text);
@@ -116,21 +131,21 @@ function getRecipe(recipeId) {
 
 //recipes for each calorie category
 var lowCalRecipes = {
-    "chicken-stir-fry": 7214,
-    "avocado-quinoa-power-salad": 3932,
+    "chicken stir fry": 7214,
+    "avocado quinoa power salad": 3932,
     "one-pot-garlic-parmesan-pasta": 2932,
     "lemon-chicken-and-asparagus-stir-fry":534,
 }
 
 var averageCalRecipes = {
-    "classic-baked-mac-and-cheese": 8031,
+    "classic baked mac and cheese": 8031,
     "enchilada-inspired-stuffed-shells": 2046,
     "Devil-curry": 7997,
     "cauliflowe-walnut-burritos": 4743,
 }
 
 var highCalRecipes = {
-    "french-pepper-steak": 2862,
+    "french pepper steak": 2862,
     "country-fried-steak-and-gravy": 5157,
     "roasted-garlic-and-herb-pork-roast" : 7963,
 }
@@ -160,3 +175,5 @@ function getFortune() {
     });
 }
 // getFortune();
+
+showUserName();
