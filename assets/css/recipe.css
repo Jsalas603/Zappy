@@ -96,7 +96,7 @@ body {
 }
 #show-recipe-container{
     /* display: block; */
-    /* width: 400px; */
+    width: 400px;
     display: left;
     max-width: auto;
     margin: 1rem;
@@ -114,4 +114,10 @@ body {
 .cook-text{
     font-family: "Times New Roman", Times, serif;
     font-size:40px;
+}
+@media screen and (max-width:360px) {
+    .column{
+        display:flex;
+        flex-direction: column;
+    }
 }
