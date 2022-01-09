@@ -13,7 +13,18 @@ var hashPassword = function(pass) {
     // Couldn't find a good method to hash, so obfuscating with base64 encoding for now
     // Method is not secure and should not be used in production environments
     return btoa(pass);
-}
+};
+
+var passwordCheck = function(userPass) {
+    var userInfo = localStorage.getItem("userInfo");
+    // Compare user input password to password in localstorage
+
+    if (userPass === atob(JSON.parse(userInfo).userPassword) && userInfo != null) {
+        return true;
+    } else {
+        return false;
+    }
+};
 
 function setFormMessage(formEl, type, message) {
     var messageEl = formEl.querySelector(".form-message");
@@ -22,8 +33,13 @@ function setFormMessage(formEl, type, message) {
     messageEl.classList.remove("form-message-sucess", "form-message-error");
     messageEl.classList.add('form-message--${type}');
 
-    if (localStorage.getItem("userInfo")) {
+
+    console.log(type);
+
+    if (type === "success") {
         redirectLandingPage();
+    } else {
+        return;
     }
 }
 
@@ -58,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Perform Fetch login
 
-        if (localStorage.getItem("userInfo")) {
+        if (passwordCheck(document.querySelector("input[name='password']").value)) {
             setFormMessage(loginForm, "success", "You have successfully logged in!");
         } else {
             setFormMessage(loginForm, "error", "Invalid username/password combination");
