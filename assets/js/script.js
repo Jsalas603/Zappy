@@ -2,6 +2,19 @@ var redirectLandingPage = function () {
     window.location = "./landingindex.html";
 };
 
+var setLocalStorage = function(userInfo) {
+    console.dir(JSON.stringify(userInfo));
+
+    // Set userInfo in localstorage
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+};
+
+var hashPassword = function(pass) {
+    // Couldn't find a good method to hash, so obfuscating with base64 encoding for now
+    // Method is not secure and should not be used in production environments
+    return btoa(pass);
+}
+
 function setFormMessage(formEl, type, message) {
     var messageEl = formEl.querySelector(".form-message");
 
@@ -9,7 +22,7 @@ function setFormMessage(formEl, type, message) {
     messageEl.classList.remove("form-message-sucess", "form-message-error");
     messageEl.classList.add('form-message--${type}');
 
-    if (localStorage.getItem("userName")) {
+    if (localStorage.getItem("userInfo")) {
         redirectLandingPage();
     }
 }
@@ -40,16 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form-hidden");
     });
 
-    loginForm.addEventListener("submit", e => {
+    loginForm.addEventListener("submit", e => { 
         e.preventDefault();
 
         // Perform Fetch login
-        var userName = document.querySelector("input[name='username']").value;
 
-        // Set username in localstorage
-        localStorage.setItem("userName", userName);
-
-        if (localStorage.getItem("userName")) {
+        if (localStorage.getItem("userInfo")) {
             setFormMessage(loginForm, "success", "You have successfully logged in!");
         } else {
             setFormMessage(loginForm, "error", "Invalid username/password combination");
@@ -61,10 +70,27 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 2) {
                 setInputError(inputElement, "Username must be at least 2 characters");
             }
+
+            // Create userObj for storing user data
+            var userObj = {
+                userName: document.querySelector("input[name='signupUsername']").value,
+                userEmail: document.querySelector("input[name='signupEmail']").value,
+                userPassword: hashPassword(document.querySelector("input[name='signupPassword']").value)
+            }
+
+            if (createAccountForm.classList.contains("form-hidden")) {
+                return;
+            } else {
+                setLocalStorage(userObj);
+            }
         });
 
         inputElement.addEventListener("input", e => {
-            clearInputError(inputElement);
+            if (inputElement == null) {
+                clearInputError(inputElement);
+            } else {
+                return;
+            }
         });
     });
 });

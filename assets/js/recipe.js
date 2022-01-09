@@ -14,8 +14,10 @@ var recipeImageEl = document.getElementById('recipe-image');
 var selectedRecipeId;
 
 var showUserName = function() {
-    var userName = localStorage.getItem("userName");
-    document.querySelector(".cook-text").textContent = "Let's cook, " + userName + "!";
+
+    // Pull user info from local storage and display username on page
+    var userInfo = localStorage.getItem("userInfo");
+    document.querySelector(".cook-text").textContent = "Let's cook, " + JSON.parse(userInfo).userName + "!";
 }
 
 lowCaloriesButton.onclick = function(event) {
