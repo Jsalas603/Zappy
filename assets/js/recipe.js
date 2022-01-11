@@ -160,7 +160,8 @@ function getFortune() {
         "headers": {
             "Content-Type": "application/x-www-form-urlencoded",
             "x-rapidapi-host": "fortune-cookie.p.rapidapi.com",
-            "x-rapidapi-key": "152c498cf3msh0f5746cfa2f4dcfp1e760cjsn3620d249e86f"
+           // "x-rapidapi-key": "152c498cf3msh0f5746cfa2f4dcfp1e760cjsn3620d249e86f"
+            "x-rapidapi-key": "99f96aae53msh9a0e5b42e091eeep12e261jsn062edb68215d"
         },
         "body": "api_key=9fd81843ad7f202f26c1a174c7357585"
     })
