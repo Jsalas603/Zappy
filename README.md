@@ -1,6 +1,6 @@
 # Zappy
 
-Application will provide user with food options based on calorie selection
+Application will provide user with food options based on calorie selection. The vegetarian and budget options will be available in future improvements. 
 
 ![Zappy Login Page](./assets/images/zappy_screenshot01.png)
 
@@ -11,7 +11,6 @@ Application will provide user with food options based on calorie selection
 * HTMl
 * CSS
 * JavaScript
-* JQuery
 * Tailwindcss
 
 ## APIs Used

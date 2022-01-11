@@ -9,12 +9,15 @@ var highList = document.getElementById("high-recipe-list-container")
 var fortuneModal = document.getElementById('fortune-modal');
 var ingredientsEl = document.getElementById('ingredients');
 var instructionsEl = document.getElementById('instructions');
+var recipeImageEl = document.getElementById('recipe-image');
 
 var selectedRecipeId;
 
 var showUserName = function() {
-    var userName = localStorage.getItem("userName");
-    document.querySelector(".cook-text").textContent = "Let's cook, " + userName + "!";
+
+    // Pull user info from local storage and display username on page
+    var userInfo = localStorage.getItem("userInfo");
+    document.querySelector(".cook-text").textContent = "Let's cook, " + JSON.parse(userInfo).userName + "!";
 }
 
 lowCaloriesButton.onclick = function(event) {
@@ -68,9 +71,13 @@ var fortuneButton = document.getElementById('fortune-button');
 fortuneButton.onclick= function() {
     fortuneModal.style.display = 'none';
     getRecipe(selectedRecipeId).then(recipe => {
+        var recipeImages = recipe.thumbnail_url;
         var ingredients = recipe.sections[0].components;
         var instructions = recipe.instructions;
 
+        while (recipeImageEl.firstChild) {
+            recipeImageEl.removeChild(recipeImageEl.firstChild);
+        }
         while (ingredientsEl.firstChild) {
             ingredientsEl.removeChild(ingredientsEl.firstChild);
         }
@@ -78,6 +85,11 @@ fortuneButton.onclick= function() {
         while (instructionsEl.firstChild) {
             instructionsEl.removeChild(instructionsEl.firstChild);
         }
+
+        var recipeImage = document.createElement('img');
+        recipeImage.src = recipeImages;
+        recipeImageEl.append(recipeImage) 
+        console.log (recipeImageEl);
 
         var ingredientText = document.createElement('h3');
         ingredientText.classList.add("text");
@@ -132,21 +144,21 @@ function getRecipe(recipeId) {
 
 //recipes for each calorie category
 var lowCalRecipes = {
-    "chicken stir fry": 7214,
-    "avocado quinoa power salad": 3932,
+    "chicken-stir-fry": 7214,
+    "avocado-quinoa-power-salad": 3932,
     "one-pot-garlic-parmesan-pasta": 2932,
     "lemon-chicken-and-asparagus-stir-fry":534,
 }
 
 var averageCalRecipes = {
-    "classic baked mac and cheese": 8031,
+    "classic-baked-mac-and-cheese": 8031,
     "enchilada-inspired-stuffed-shells": 2046,
     "Devil-curry": 7997,
     "cauliflowe-walnut-burritos": 4743,
 }
 
 var highCalRecipes = {
-    "french pepper steak": 2862,
+    "french-pepper-steak": 2862,
     "country-fried-steak-and-gravy": 5157,
     "roasted-garlic-and-herb-pork-roast" : 7963,
 }

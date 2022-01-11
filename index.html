@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Zappy</title>
-    <link rel="shortcut icon" href='/assets/images/zappylogo.png'>
+    <link rel="shortcut icon" href='./assets/images/zappylogo.png'>
 </head>
 
 <body>
     <div class="container">
         <form class="form" id="login">
             <!-- <h1 class="form-title">Login</h1> -->
-            <img src="assets/images/zappylogo.png" alt="zappy logo">
+            <img src="./assets/images/zappylogo.png" alt="zappy logo">
             <div class="form-message form-message-error"></div>
             <div class="form-input-group">
                 <input type="text" class="form-input" autofocus placeholder="Username or email" name="username">
                 <div class="form-input-error-message"></div>
             </div>
             <div class="form-input-group">
-                <input type="password" class="form-input" autofocus placeholder="Password">
+                <input type="password" class="form-input" autofocus placeholder="Password" name="password">
                 <div class="form-input-error"></div>
             </div>
-            <button class='form-button' type="submit"><a href="landingindex.html">Let's feast</a></button>
+            <button class='form-button' type="submit">Let's feast</button>
             <p class="form-text">
                 <a href='#' class="form-link">Forgot password?</a> 
             </p>
@@ -36,15 +36,15 @@
             <h1 class="form-title">Create Account</h1>
             <div class="form-message form-message-error"></div>
             <div class="form-input-group">
-                <input type="text" id="signupUsername" class="form-input" autofocus placeholder="Username">
+                <input type="text" id="signupUsername" class="form-input" autofocus placeholder="Username" name="signupUsername">
                 <div class="form-input-error-message"></div>
             </div>
             <div class="form-input-group">
-                <input type="text" class="form-input" autofocus placeholder="Email Address">
+                <input type="text" class="form-input" autofocus placeholder="Email Address" name="signupEmail">
                 <div class="form-input-error-message"></div>
             </div>
             <div class="form-input-group">
-                <input type="password" class="form-input" autofocus placeholder="Password">
+                <input type="password" class="form-input" autofocus placeholder="Password" name="signupPassword">
                 <div class="form-input-error"></div>
             </div>
             <div class="form-input-group">
@@ -57,7 +57,7 @@
             </p>
         </form>
     </div>
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
