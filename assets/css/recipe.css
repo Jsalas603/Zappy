@@ -15,6 +15,7 @@ body {
 
 }
 .options {
+    position: sticky;
     text-align: center;
     width: 350px;
     max-width: auto;
